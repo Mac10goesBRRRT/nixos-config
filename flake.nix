@@ -1,5 +1,5 @@
 {
-  description = "NixOS Configuration"
+  description = "NixOS Configuration";
   
   inputs = {
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
