@@ -10,6 +10,8 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
+	{ security.pki.certificateFiles = [ ./certs/HFD-eduroam-CA.pem ]; }
+        { powerManagement.enable = true; }	
       ];
     };
   };
