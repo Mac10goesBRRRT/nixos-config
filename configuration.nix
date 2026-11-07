@@ -25,7 +25,7 @@
 
   sops = {
     defaultSopsFile = ./secrets/secrets.yaml;
-    age.keyFile = ".config/sops/age/key.txt";
+    age.keyFile = "/home/janos/.config/sops/age/keys.txt";
   };
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
