@@ -35,6 +35,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -116,7 +118,25 @@
     git
     bat
     vscode
+    alacritty
+    fuzzel             # Mod+D (oder per Noctalia-Launcher ersetzen)
+    swaylock           # Mod+Alt+L (oder Noctalia-Lockscreen, falls vorhanden)
+
+    # Typische Niri-Grundausstattung
+    xwayland-satellite # X11-Apps (Steam, Discord, ...)
+    nautilus           # oder nemo/thunar/dolphin
+    pavucontrol        # Audio-Mixer
+    brightnessctl      # Helligkeit
+    wl-clipboard       # Clipboard im Terminal
+    playerctl          # Medientasten
+    adwaita-icon-theme
+    nerd-fonts.symbols-only  # Icons für Bars/Terminals
+
+    #
+    vesktop
   ];
+
+  hardware.bluetooth.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -146,5 +166,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }

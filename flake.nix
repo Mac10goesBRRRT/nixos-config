@@ -10,8 +10,13 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs"; # this line is optional, prevents downloading two versions of nixpkgs but disables cache
     };
   };
 
@@ -30,6 +35,7 @@
           environment.sessionVariables = {
             EDITOR  = "code --wait";
           };
+          programs.niri.enable = true;
         }
 
         home-manager.nixosModules.default
@@ -37,8 +43,13 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
+            backupFileExtension = "backup";
             extraSpecialArgs = { inherit inputs; }; #If you want access to inputs in your home.nix
             users.janos = ./home/ceres/home.nix; # replace <USERNAME> with your actual username
+            sharedModules = [
+                inputs.noctalia.homeModules.default
+              ];
+
           };
         }
       ];
