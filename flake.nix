@@ -40,6 +40,12 @@
             EDITOR  = "code --wait";
           };
           programs.niri.enable = true;
+          programs.nh = {
+            enable = true;
+            clean.enable = true;
+            clean.extraArgs = "--keep-since 4d --keep 3";
+            flake = "/home/janos/nixos-config"; # sets NH_OS_FLAKE variable for you
+          };
         }
 
         home-manager.nixosModules.default
