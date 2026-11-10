@@ -120,23 +120,19 @@
     git
     bat
     vscode
-    alacritty
-    fuzzel             # Mod+D (oder per Noctalia-Launcher ersetzen)
-    swaylock           # Mod+Alt+L (oder Noctalia-Lockscreen, falls vorhanden)
-
-    # Typische Niri-Grundausstattung
-    xwayland-satellite # X11-Apps (Steam, Discord, ...)
-    nautilus           # oder nemo/thunar/dolphin
-    pavucontrol        # Audio-Mixer
-    brightnessctl      # Helligkeit
-    wl-clipboard       # Clipboard im Terminal
-    playerctl          # Medientasten
-    adwaita-icon-theme
-    nerd-fonts.symbols-only  # Icons für Bars/Terminals
 
     #
     vesktop
     thunderbird
+
+    #zip
+    file-roller #frontend gnome
+    zip
+    unzip
+    p7zip
+
+    #vpn
+    eduvpn-client
   ];
 
   hardware.bluetooth.enable = true;
@@ -161,7 +157,7 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
+  networking.firewall.checkReversePath = "loose";
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

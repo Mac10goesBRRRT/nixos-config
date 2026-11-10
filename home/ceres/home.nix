@@ -13,14 +13,29 @@ in
   # changes in each release.
   home.stateVersion = "24.11";
 
-    imports = [
+  home.packages = with pkgs; [
+    kitty
+    # Typische Niri-Grundausstattung
+    #xwayland-satellite # X11-Apps (Steam, Discord, ...)
+    #nautilus           # oder nemo/thunar/dolphin
+    pavucontrol        # Audio-Mixer
+    #brightnessctl      # Helligkeit
+    #wl-clipboard       # Clipboard im Terminal
+    #playerctl          # Medientasten
+    #adwaita-icon-theme
+    #nerd-fonts.symbols-only  # Icons für Bars/Terminals
+
+    spotify
+  ];
+
+  imports = [
     ./modules/niri.nix
   ];
 
   #programs.flyline.enable = true;
 
   home.shellAliases = {
-    ls = "ls -hal";
+    ls = "ls -hal --color=tty";
     cat = "bat";
   };
 
@@ -36,4 +51,19 @@ in
       flyline mouse --mode disabled
     '';
   };
+
+  programs.kitty = {
+  enable = true;
+  extraConfig = ''
+    include themes/noctalia.conf
+  '';
+  };
+
+  home.pointerCursor = {
+    name = "Bibata-Modern-Classic";
+    package = pkgs.bibata-cursors;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+};
 }

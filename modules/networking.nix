@@ -1,8 +1,9 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   networking.networkmanager = {
     enable = true;
+    plugins = [ pkgs.networkmanager-openvpn ];
     ensureProfiles = {
       environmentFiles = [
         config.sops.secrets."wifi-mobile-env".path
