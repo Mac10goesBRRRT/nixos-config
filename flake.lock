@@ -1,5 +1,23 @@
 {
   "nodes": {
+    "flyline": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1794143077,
+        "narHash": "sha256-Q6z4FCC2trmtcW/qXadmWlrLKhz3BHi3xsxv///Yfmc=",
+        "owner": "HalFrgrd",
+        "repo": "flyline",
+        "rev": "f5d6869fcd99c117e05da5814e7b772b8ca7ec31",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HalFrgrd",
+        "repo": "flyline",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -21,6 +39,22 @@
       }
     },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1783522502,
+        "narHash": "sha256-iffAls3iaNTyJC2faYcUXSI+Gp02cDjYl+MygxKl2GI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0bb7ec54c8483066ec9d7720e780a5caa71f8612",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1794042290,
         "narHash": "sha256-VZ8WvA9m3XN36juXyg/GwbDRU2OezOHJlXpJCXkccv0=",
@@ -55,8 +89,9 @@
     },
     "root": {
       "inputs": {
+        "flyline": "flyline",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
         "sops-nix": "sops-nix"
       }

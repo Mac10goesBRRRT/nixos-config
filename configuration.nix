@@ -91,6 +91,8 @@
     #media-session.enable = true;
   };
 
+  virtualisation.docker.enable = true;
+  
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -134,6 +136,7 @@
 
     #
     vesktop
+    thunderbird
   ];
 
   hardware.bluetooth.enable = true;

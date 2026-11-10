@@ -18,6 +18,9 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs"; # this line is optional, prevents downloading two versions of nixpkgs but disables cache
     };
+
+    # Flyline Input hinzufügen
+    flyline.url = "github:HalFrgrd/flyline";
   };
 
   outputs = {self, nixpkgs, home-manager, ... }@inputs: {
@@ -27,7 +30,8 @@
       modules = [
         ./configuration.nix
         ./modules/networking.nix
-        
+        inputs.flyline.nixosModules.default
+
         inputs.sops-nix.nixosModules.sops
 	      { 
           security.pki.certificateFiles = [ ./certs/HFD-eduroam-CA.pem ]; 
@@ -49,7 +53,6 @@
             sharedModules = [
                 inputs.noctalia.homeModules.default
               ];
-
           };
         }
       ];

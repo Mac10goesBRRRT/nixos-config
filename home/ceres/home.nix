@@ -1,5 +1,7 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, inputs, ... }:
+let
+  flyline = inputs.flyline.packages.${pkgs.stdenv.hostPlatform.system}.flyline;
+in
 {
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -15,4 +17,23 @@
     ./modules/niri.nix
   ];
 
+  #programs.flyline.enable = true;
+
+  home.shellAliases = {
+    ls = "ls -hal";
+    cat = "bat";
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      enable -f ${flyline}/lib/libflyline.so flyline
+      flyline mouse --mode disabled
+    '';
+  };
 }

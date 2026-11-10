@@ -35,6 +35,12 @@ in
     settings = {
       input.keyboard.xkb.layout = "de";
 
+      binds = {
+        "Mod+Plus".set-column-width = "+10%";
+        "Mod+Minus".set-column-width = "-10%";
+        "Mod+Shift+Plus".set-window-height = "+10%";
+        "Mod+Shift+Minus".set-window-height = "-10%";
+      };
       #output = {
       #  _args = [ "eDP-1" ];
       #  mode = "2880x1800@120.000";
