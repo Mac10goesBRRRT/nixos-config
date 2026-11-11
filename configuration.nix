@@ -69,6 +69,10 @@
     variant = "";
   };
 
+  services.pipewire.wireplumber.extraConfig."99-no-camera" = {
+    "wireplumber.profiles".main."hardware.video-capture" = "disabled";
+  };
+
   # Configure console keymap
   console.keyMap = "de";
 
