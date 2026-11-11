@@ -15,11 +15,28 @@ in
 
   
   home.packages = with pkgs; [
+    vim
+    git
+    bat
+    vscode
+    #
     kitty
     pavucontrol        # Audio-Mixer
     eza
     spotify
     nerd-fonts.fira-code
+    #
+    vesktop
+    thunderbird
+
+    #zip
+    file-roller #frontend gnome
+    zip
+    unzip
+    p7zip
+
+    #vpn
+    eduvpn-client
   ];
 
   fonts.fontconfig.enable = true;
