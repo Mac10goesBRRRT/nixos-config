@@ -13,31 +13,21 @@ in
   # changes in each release.
   home.stateVersion = "24.11";
 
+  
   home.packages = with pkgs; [
     kitty
-    # Typische Niri-Grundausstattung
-    #xwayland-satellite # X11-Apps (Steam, Discord, ...)
-    #nautilus           # oder nemo/thunar/dolphin
     pavucontrol        # Audio-Mixer
-    #brightnessctl      # Helligkeit
-    #wl-clipboard       # Clipboard im Terminal
-    #playerctl          # Medientasten
-    #adwaita-icon-theme
-    #nerd-fonts.symbols-only  # Icons für Bars/Terminals
-
+    eza
     spotify
+    nerdfont.fira-code
   ];
+
+  fonts.fontconfig.enable = true;
 
   imports = [
     ./modules/niri.nix
+    ./modules/shell.nix
   ];
-
-  #programs.flyline.enable = true;
-
-  home.shellAliases = {
-    ls = "ls -hal --color=tty";
-    cat = "bat";
-  };
 
   programs.direnv = {
     enable = true;
@@ -53,10 +43,14 @@ in
   };
 
   programs.kitty = {
-  enable = true;
-  extraConfig = ''
-    include themes/noctalia.conf
-  '';
+    enable = true;
+    extraConfig = ''
+      include themes/noctalia.conf
+    '';
+    font = {
+      name = "FiraCode Nerd Font";
+      size = 12;
+    };
   };
 
   home.pointerCursor = {
