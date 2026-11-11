@@ -28,7 +28,9 @@ in
     #
     vesktop
     thunderbird
-
+    # bubblewrap for ai
+    bubblewrap
+    opencode
     #zip
     file-roller #frontend gnome
     zip
