@@ -19,7 +19,7 @@ in
     pavucontrol        # Audio-Mixer
     eza
     spotify
-    nerdfont.fira-code
+    nerd-fonts.fira-code
   ];
 
   fonts.fontconfig.enable = true;
