@@ -1,0 +1,37 @@
+{
+  "allowNestedUserNamespaces": false,
+  "network": {
+    "allowedDomains": [
+      "api.openai.com",
+      "auth.openai.com",
+      "chatgpt.com",
+      "*.chatgpt.com",
+      "openai.com",
+      "*.openai.com"
+    ],
+    "deniedDomains": [],
+    "allowAllUnixSockets": false
+  },
+  "filesystem": {
+    "denyRead": [
+      ".env",
+      ".env.local",
+      ".env.production",
+      "./**/.env",
+      "./**/.env.*",
+      "./**/secrets.json",
+      "./**/credentials.json",
+      "./**/credentials.toml"
+    ],
+    "allowWrite": [
+      ".",
+      "~",
+      "/tmp"
+    ],
+    "denyWrite": [
+      ".git",
+      ".env",
+      ".envrc"
+    ]
+  }
+}

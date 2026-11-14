@@ -28,9 +28,6 @@ in
     #
     vesktop
     thunderbird
-    # bubblewrap for ai
-    bubblewrap
-    opencode
     #zip
     file-roller #frontend gnome
     zip
@@ -46,6 +43,7 @@ in
   imports = [
     ./modules/niri.nix
     ./modules/shell.nix
+    ./modules/ai-sandbox.nix
   ];
 
   programs.direnv = {
@@ -79,5 +77,5 @@ in
     size = 24;
     gtk.enable = true;
     x11.enable = true;
-};
+  };
 }

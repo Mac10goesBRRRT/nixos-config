@@ -128,6 +128,16 @@ in
             { clip-to-geometry = true; }
           ];
         }
+        {
+          window-rule._children = [
+            {
+              background-effect = {
+                blur = true;
+                xray = false;
+              };
+            }
+          ];
+        }
       ];
     };
   };
