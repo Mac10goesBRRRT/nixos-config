@@ -36,6 +36,9 @@ in
 
     #vpn
     eduvpn-client
+
+    # containerlab
+    containerlab
   ];
 
   fonts.fontconfig.enable = true;

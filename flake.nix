@@ -21,6 +21,12 @@
 
     # Flyline Input hinzufügen
     flyline.url = "github:HalFrgrd/flyline";
+
+    # Containerlab, remove after acn
+    containerlab = {
+      url = "github:srl-labs/containerlab";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {self, nixpkgs, home-manager, ... }@inputs: {
