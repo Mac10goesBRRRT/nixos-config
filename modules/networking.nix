@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  networking.hostName = "ceres"; # Define your hostname.
+  networking.firewall.checkReversePath = "loose";
+
   networking.networkmanager = {
     enable = true;
     plugins = [ pkgs.networkmanager-openvpn ];

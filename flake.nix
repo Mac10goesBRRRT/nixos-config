@@ -35,7 +35,6 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
-        ./modules/networking.nix
         inputs.flyline.nixosModules.default
 
         inputs.sops-nix.nixosModules.sops
