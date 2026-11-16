@@ -27,6 +27,11 @@
       url = "github:srl-labs/containerlab";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    acid-boot = {
+      url = "github:kurisu-agent/nix-acid-boot";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {self, nixpkgs, home-manager, ... }@inputs: {
@@ -36,7 +41,7 @@
       modules = [
         ./configuration.nix
         inputs.flyline.nixosModules.default
-
+        inputs.acid-boot.nixosModules.default
         inputs.sops-nix.nixosModules.sops
 	      { 
           security.pki.certificateFiles = [ ./certs/HFD-eduroam-CA.pem ]; 

@@ -39,6 +39,14 @@ in
 
     # containerlab
     containerlab
+
+    # office
+    libreoffice
+    hunspell
+    hunspellDicts.de-de
+
+    #
+    btop
   ];
 
   fonts.fontconfig.enable = true;

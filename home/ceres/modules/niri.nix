@@ -53,7 +53,7 @@ in
       # Beispiel aus der Doku, Pfad anpassen:
       wallpaper = {
         enabled = true;
-        default.path = "/home/janos/Pictures/wallpaper.png";
+        default.path = "/home/janos/nixos-config/home/ceres/assets/wall1.jpg";
       };
     };
   };

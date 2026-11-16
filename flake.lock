@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "acid-boot": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793236566,
+        "narHash": "sha256-nU45pkYb9K7UH01TncnBOeifAP4Mxxfc8ehcvFDcouI=",
+        "owner": "kurisu-agent",
+        "repo": "nix-acid-boot",
+        "rev": "b518a01be4c2b98beb1e155414ecb273ecbb8c5c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kurisu-agent",
+        "repo": "nix-acid-boot",
+        "type": "github"
+      }
+    },
     "containerlab": {
       "inputs": {
         "nixpkgs": [
@@ -109,6 +129,7 @@
     },
     "root": {
       "inputs": {
+        "acid-boot": "acid-boot",
         "containerlab": "containerlab",
         "flyline": "flyline",
         "home-manager": "home-manager",

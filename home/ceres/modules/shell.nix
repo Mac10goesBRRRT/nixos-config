@@ -6,5 +6,6 @@
     lt = "eza -l --icons --git -T -h --time-style relative --group-directories-first";
     cat = "bat";
     ssh = "kitten ssh";
+    top = "btop";
   };
 }
