@@ -18,7 +18,6 @@ in
     vim
     git
     bat
-    vscode
     #
     kitty
     pavucontrol        # Audio-Mixer
@@ -79,6 +78,13 @@ in
       name = "FiraCode Nerd Font";
       size = 12;
     };
+  };
+
+  programs.vscode = {
+    enable = true;
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      ms-vscode-remote.remote-ssh
+    ];
   };
 
   home.pointerCursor = {
