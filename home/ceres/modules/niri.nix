@@ -43,6 +43,10 @@ in
         tint_intensity = 0.3;
       };
       
+      bluetooth = {
+        show_label = true;
+      };
+      
 
       idle.behavior.lock = {
         timeout = 300;

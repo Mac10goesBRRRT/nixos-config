@@ -46,6 +46,8 @@ in
 
     #
     btop
+    #
+    rocketchat-desktop
   ];
 
   fonts.fontconfig.enable = true;
