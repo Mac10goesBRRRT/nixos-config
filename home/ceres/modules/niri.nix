@@ -179,6 +179,13 @@ in
             }
           ];
         }
+        {
+          # Inaktive Fenster transparent machen, damit der Hintergrund-Blur sichtbar wird.
+          window-rule._children = [
+            { match._props.is-active = false; }
+            { opacity = 0.88; }
+          ];
+        }
       ];
     };
   };

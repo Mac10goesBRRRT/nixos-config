@@ -82,6 +82,12 @@ args=(
   --chdir "$current_dir"
 )
 
+# this should allow the themeing to work
+args+=(
+  --ro-bind "$host_home/.config/opencode/themes" \
+    /home/ocbox/.config/opencode/themes
+)
+
 # Git metadata stays readable for diffs, but cannot be changed by the agent.
 if [[ -e "$root/.git" ]]; then
   args+=(--ro-bind "$root/.git" "$root/.git")
