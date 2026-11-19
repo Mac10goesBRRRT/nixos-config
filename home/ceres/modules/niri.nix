@@ -24,6 +24,11 @@ in
         mode = "auto";
         source = "wallpaper";
         builtin = "Noctalia";
+        templates = {
+          enable_builtin_templates = true;
+          builtin_ids = [ "niri" "kitty" "btop" ];
+          enable_community_templates = true;
+        };
       };
 
       shell = {
@@ -48,10 +53,25 @@ in
       };
       
 
+      # Innerhalb von 5 Sekunden ohne Passwort per Tastendruck oder Maus entsperren.
+      lockscreen.grace_period_seconds = 5;
+
       idle.behavior.lock = {
         timeout = 300;
         action = "lock";
         enabled = true;
+      };
+
+
+      idle.behavior.screen-off = {
+        timeout = 330;
+        action = "screen_off";       # turns monitors off, and back on when you return
+        enabled = true;             # explicitly disabled in the default config
+      };
+
+      idle.behavior.suspend = {
+        timeout = 420;
+        action = "lock_and_suspend"; # or action = "suspend" with lock_before_suspend = false
       };
 
       # Beispiel aus der Doku, Pfad anpassen:
@@ -63,9 +83,15 @@ in
   };
   wayland.windowManager.niri = {
     enable = true;
-    extraConfig = lib.mkBefore ''
-      include "${niriDefaultConfig}"
-    '';
+    extraConfig = lib.mkMerge [
+      (lib.mkBefore ''
+        include "${niriDefaultConfig}"
+      '')
+      (lib.mkAfter ''
+        // Noctalia erzeugt diese Datei beim Anwenden des Templates.
+        include optional=true "${config.xdg.configHome}/niri/noctalia.kdl"
+      '')
+    ];
     settings = {
       input.keyboard.xkb.layout = "de";
 
