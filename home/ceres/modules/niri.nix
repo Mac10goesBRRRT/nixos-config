@@ -118,10 +118,21 @@ in
         "Mod+Shift+Minus".set-window-height = "-10%";
 
         "Alt+Tab".spawn-sh = "noctalia msg window-switcher";
-        "Print".spawn-sh = "noctalia msg screenshot-region";
-        "Mod+Print".spawn-sh = "noctalia msg screenshot-fullscreen";
 
-        "Mod+Space".spawn-sh = "noctalia msg panel-toggle launcher";
+        "Print" = {
+          _props.hotkey-overlay-title = "Screenshot";
+          spawn-sh = "noctalia msg screenshot-region";
+        };
+
+        "Mod+Print" = {
+          _props.hotkey-overlay-title = "Full-Screen Screenshot";
+          spawn-sh = "noctalia msg screenshot-fullscreen";
+        };
+
+        "Mod+Space" = {
+          _props.hotkey-overlay-title = "Launcher";
+          spawn-sh = "noctalia msg panel-toggle launcher";
+        };
 
         "XF86AudioRaiseVolume" = {
           _props.allow-when-locked = true;
