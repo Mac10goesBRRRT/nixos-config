@@ -9,9 +9,13 @@
     top = "btop";
   };
 
-  programs.bash.initExtra = ''
-    PS1_FINAL='> '
-    RPS1_FINAL=' <\D{%d.%m.%Y %H:%M:%S}'
-    PROMPT_RULER_FINAL='\e[90m─\e[0m'
-  '';
+  #programs.bash.initExtra = ''
+  #  PS1_FINAL='> '
+  #  RPS1_FINAL=' <\D{%d.%m.%Y %H:%M:%S}'
+  #  PROMPT_RULER_FINAL='\e[90m─\e[0m'
+  #'';
+
+  programs.starship = {
+    enable = true;
+  };
 }

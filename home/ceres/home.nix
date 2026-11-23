@@ -24,6 +24,7 @@ in
     eza
     spotify
     nerd-fonts.fira-code
+    quicksand
     #
     vesktop
     thunderbird
@@ -43,7 +44,7 @@ in
     libreoffice
     hunspell
     hunspellDicts.de-de
-
+    obsidian
     #
     btop
     #

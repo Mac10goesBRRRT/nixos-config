@@ -19,22 +19,26 @@ in
     btop
   ];
 
-  programs.bash.promptInit = ''
-    if (( EUID == 0 )); then
-      PS1='\[\e[01;31m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\$ '
-    else
-      PS1='\[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\$ '
-    fi
-  '';
+  virtualisation.podman = {
+    enable = true;
+  };
 
-  programs.bash.interactiveShellInit = lib.mkAfter ''
-    if (( EUID == 0 )); then
-      PS1_FINAL='# '
-      RPS1_FINAL=' <\D{%d.%m.%Y %H:%M:%S}'
-      PROMPT_RULER_FINAL='\e[90m─\e[0m'
-      if enable -f ${flyline}/lib/libflyline.so flyline; then
-        flyline mouse --mode disabled
-      fi
-    fi
-  '';
+  #programs.bash.promptInit = ''
+  #  if (( EUID == 0 )); then
+  #    PS1='\[\e[01;31m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\$ '
+  #  else
+  #    PS1='\[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\$ '
+  #  fi
+  #'';
+
+  #programs.bash.interactiveShellInit = lib.mkAfter ''
+  #  if (( EUID == 0 )); then
+  #    PS1_FINAL='# '
+  #    RPS1_FINAL=' <\D{%d.%m.%Y %H:%M:%S}'
+  #    PROMPT_RULER_FINAL='\e[90m─\e[0m'
+  #    if enable -f ${flyline}/lib/libflyline.so flyline; then
+  #      flyline mouse --mode disabled
+  #    fi
+  #  fi
+  #'';
 }
